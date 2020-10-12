@@ -1,5 +1,8 @@
 # vue-shopping-cart
 
+This a shopping cart demo to practice Vuex 
+
+
 ## Project setup
 ```
 npm install
