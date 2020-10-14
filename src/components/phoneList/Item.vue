@@ -8,7 +8,7 @@
       <p class="slogan">{{ item.slogan}}</p>
       <p class="price">{{ item.default_price}}</p>
       <p class="button">
-        <button>加入购物车</button>
+        <button @click="addToCart(item.default_price, 'PLUS')">加入购物车</button>
       </p>
     </div>
   </div>
@@ -19,6 +19,22 @@ export default {
   name: 'ListItem',
   props: {
     item: Object
+  },
+  methods: {
+    addToCart(data, type) {
+      this.$store.dispatch('setTotal', {
+        type,
+        price: Number(data.default_price)
+      })
+
+      this.$store.dispatch('setCart', {
+        id: data.id,
+        img: data.img,
+        name: data.phone_name,
+        price: Number(data.default_price),
+        slogan: data.slogan
+      })
+    }
   }
 
 }

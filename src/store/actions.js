@@ -17,5 +17,11 @@ export default {
       totalMount,
       cartData
     })
+  },
+  setTotal({ commit }, payload) {
+    commit('SET_TOTAL', payload)
+  },
+  setCart({ commit }, payload) {
+    commit('SET_CART', payload)
   }
 }
